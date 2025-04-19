@@ -14,6 +14,7 @@ GitHub Actions: Automates building and pushing Docker images.
 ChatGPT was used to generate the Dockerfile, diagram, and the github/workflow file.  
 Prompt for Dockerfile: "Write a Dockerfile that builds and serves an Angular application using Node.js and Angular CLI."  
 Prompt for the github/workflow file:  "Set up a GitHub Actions workflow that builds and pushes a Docker image to DockerHub when a commit is pushed to the main branch using secrets for authentication."  
+Prompt for diagram: "Include a Mermaid diagram of CI workflow from project update to running container"
 
 Shortcomings:  I wasnt able to do the deployment section.  
 
