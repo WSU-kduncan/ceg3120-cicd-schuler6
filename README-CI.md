@@ -23,7 +23,7 @@
    **Make sure WSL2 is installed**  
    `wsl --install`  and restart the system.  
 
-  **Manually Setting up the Container**
+  **Manually Setting up the Container**  
   From the project root directory run `sudo docker run -it -p 4200:4200 node:18-bullseye bash`  
   
   Flag explanation:  
@@ -35,7 +35,7 @@
   ** Verify that the container is successfully serving the Angular application**  
   From inside the container you should see somehting along the lines of   
   "Angular Live Development Server is listening on 0.0.0.0:4200  
-  ✔ Compiled successfully."
+  ✔ Compiled successfully."  
    
  **How to build the container**  
  First, make sure you have the github repository with the angular project cloned.  
