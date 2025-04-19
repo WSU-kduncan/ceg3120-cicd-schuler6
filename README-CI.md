@@ -104,11 +104,11 @@
     -Push the image `docker push schuler6/schuler6-3120`  
     -Link to my repo `https://hub.docker.com/repository/docker/schuler6/schuler-3120`
   
-### GitHub Actions
+# GitHub Actions
 
 ## Configuring GitHub Repository Secrets  
 
-# How to Create a DockerHub Personal Access Token (PAT)  
+### How to Create a DockerHub Personal Access Token (PAT)  
 
 1. Go to DockerHub Security Settings  
 2. Under Access Tokens, click New Access Token  
@@ -121,20 +121,15 @@
 1. In the GitHub repository, go to Settings -> Secrets and Variables -> Actions  
 2. Click New repository secret  
 
-   - `DOCKER_USERNAME`:  DockerHub username
-   - `DOCKER_TOKEN`:  DockerHub Personal Access Token
+   - `DOCKER_USERNAME`:  DockerHub username  
+   - `DOCKER_TOKEN`:  DockerHub Personal Access Token  
 
-## Secrets Set for This Project
+## Secrets Set for This Project  
 
-- `DOCKER_USERNAME`: Used by GitHub Actions to authenticate with DockerHub
-- `DOCKER_TOKEN`: The token that gives GitHub Actions permission to push to the DockerHub repository
+- `DOCKER_USERNAME`: Used by GitHub Actions to authenticate with DockerHub  
+- `DOCKER_TOKEN`: The token that gives GitHub Actions permission to push to the DockerHub repository  
 
 
-- Configuring GitHub Secrets
-  - What secrets were set based on what info
-- Behavior of GitHub workflow
-  - what does it do and when
-  - what variables in workflow are custom to your project
 
 # Deployment
 
