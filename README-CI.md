@@ -35,7 +35,9 @@
   ** Verify that the container is successfully serving the Angular application**  
   From inside the container you should see somehting along the lines of   
   "Angular Live Development Server is listening on 0.0.0.0:4200  
-  ✔ Compiled successfully."  
+  ✔ Compiled successfully." 
+
+  From outside, you can type in your browser http://<your-public-ip>:4200  
    
  **How to build the container**  
  First, make sure you have the github repository with the angular project cloned.  
