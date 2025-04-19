@@ -38,6 +38,8 @@
   ✔ Compiled successfully." 
 
   From outside, you can type in your browser http://<your-public-ip>:4200  
+
+  **Dockerfile explaination**
    
  **How to build the container**  
  First, make sure you have the github repository with the angular project cloned.  
