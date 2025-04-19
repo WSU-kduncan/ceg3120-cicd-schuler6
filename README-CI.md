@@ -32,7 +32,7 @@
   node:18-bullseye: Uses the Node 18 image with Debian Bullseye.  
   bash: Starts the container with the bash shell.  
 
-  ** Verify that the container is successfully serving the Angular application**  
+  **Verify that the container is successfully serving the Angular application**  
   From inside the container you should see somehting along the lines of   
   "Angular Live Development Server is listening on 0.0.0.0:4200  
   ✔ Compiled successfully." 
