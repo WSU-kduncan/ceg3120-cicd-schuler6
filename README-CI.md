@@ -1,6 +1,20 @@
-# Project Overview
+# Project Overview  
+## Project Goal
+The goal of this project is to implement a Continuous Integration (CI) pipeline using GitHub Actions that automatically builds and pushes a Docker image of an Angular application to a DockerHub repository whenever code is pushed to the main branch.  
+ 
+## Tools used  
+Docker: Containerizes the Angular app.  
 
-- what is the point of this project and what tools are used
+DockerHub: Hosts the built Docker images.  
+
+GitHub: Hosts the source code and triggers workflows on code changes.  
+
+GitHub Actions: Automates building and pushing Docker images.  
+
+ChatGPT was used to generate the Dockerfile, and the github/workflow file.  
+Prompt for Dockerfile: "Write a Dockerfile that builds and serves an Angular application using Node.js and Angular CLI."  
+Prompt for the github/workflow file:  "Set up a GitHub Actions workflow that builds and pushes a Docker image to DockerHub when a commit is pushed to the main branch using secrets for authentication."  
+
 - Part 4 - Diagramming goes here
   - Include a diagram (or diagrams) of your entire workflow. Meaning it should start with a project change / update, the steps that happen in between, and end with the updated version when the server is queried (web page is accessed)
 
