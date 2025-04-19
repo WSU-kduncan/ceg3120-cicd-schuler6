@@ -100,8 +100,9 @@
     -The password is your personal access token that you created
     
   **To push an image to DockerHub**  
-    -tag the image `docker tag schuler6-3120 schuler6/schuler6-3120`  
-    -push the image `docker push schuler6/schuler6-3120`
+    -Tag the image `docker tag schuler6-3120 schuler6/schuler6-3120`  
+    -Push the image `docker push schuler6/schuler6-3120`  
+    -Link to my repo `https://hub.docker.com/repository/docker/schuler6/schuler-3120`
   
 # GitHub Actions
 
