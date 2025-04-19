@@ -10,15 +10,18 @@
 
 ### For **Ubuntu (Linux)**:
 
-1. **Install Docker**:
-   Update your system and install Docker:
-   `sudo apt-get update`
-   `sudo apt-get upgrade -y`
-   `sudo apt-get install -y docker.io`
+1. **Install Docker**:  
+   Update your system and install Docker:  
+   `sudo apt-get update`  
+   `sudo apt-get upgrade -y`  
+   `sudo apt-get install -y docker.io`  
 
-   **Start and enable Docker**
-   `sudo systemctl enable docker`
+   **Start and enable Docker**  
+   `sudo systemctl enable docker`  
    `sudo systemctl start docker`
+
+   **Make sure WSL2 is installed**  
+   `wsl --install`  and restart the system.  
    
 - how to build the container
 - how to run the container
