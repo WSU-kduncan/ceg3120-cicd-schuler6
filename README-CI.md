@@ -129,6 +129,17 @@
 - `DOCKER_USERNAME`: Used by GitHub Actions to authenticate with DockerHub  
 - `DOCKER_TOKEN`: The token that gives GitHub Actions permission to push to the DockerHub repository  
 
+# GitHub Workflow  
+
+- **Trigger**: The workflow runs automatically on every push to the `main` branch.  
+
+- **What it does**:  
+  1. Checks out the repository code.  
+  2. Sets up Docker Buildx for building multi-platform images.  
+  3. Logs into DockerHub using the secrets (`DOCKER_USERNAME`, `DOCKER_TOKEN`).  
+  4. Builds the Docker image using the local `Dockerfile`.  
+  5. Tags the image with your DockerHub username and project name.  
+  6. Pushes the image to your DockerHub repository.  
 
 
 # Deployment
