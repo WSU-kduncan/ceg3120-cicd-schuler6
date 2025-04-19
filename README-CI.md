@@ -59,12 +59,12 @@
   CMD ["ng", "serve", "--host", "0.0.0.0"]
 ```
 
-  FROM: Base image with Node.js.  
-  WORKDIR: Sets working directory.  
-  RUN npm install -g: Installs Angular CLI globally.  
-  COPY: Copies the Angular project into the image.  
-  RUN npm install: Installs project dependencies.  
-  CMD: Runs the Angular development server.  
+  `FROM`: Base image with Node.js.  
+  `WORKDIR` Sets working directory.  
+  `RUN npm install -g` Installs Angular CLI globally.  
+  `COPY` Copies the Angular project into the image.  
+  `RUN npm install` Installs project dependencies.  
+  `CMD` Runs the Angular development server.  
    
  **How to build the container**  
  First, make sure you have the github repository with the angular project cloned.  
