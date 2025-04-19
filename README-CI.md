@@ -39,7 +39,31 @@
 
   From outside, you can type in your browser http://<your-public-ip>:4200  
 
-  **Dockerfile explaination**
+  **Dockerfile explaination**  
+  ```
+  FROM node:18-bullseye  
+
+  WORKDIR /app  
+
+  RUN npm install -g @angular/cli@15.0.3  
+
+  # Copy only the package files first for better layer caching  
+  COPY angular-site/wsu-hw-ng-main/package*.json ./  
+  RUN npm install  
+
+  # Copy the rest of the Angular app  
+  COPY angular-site/wsu-hw-ng-main/ .  
+
+  # Run the Angular dev server and bind to all interfaces  
+  CMD ["ng", "serve", "--host", "0.0.0.0"]
+```
+
+  FROM: Base image with Node.js.  
+  WORKDIR: Sets working directory.  
+  RUN npm install -g: Installs Angular CLI globally.  
+  COPY: Copies the Angular project into the image.  
+  RUN npm install: Installs project dependencies.  
+  CMD: Runs the Angular development server.  
    
  **How to build the container**  
  First, make sure you have the github repository with the angular project cloned.  
