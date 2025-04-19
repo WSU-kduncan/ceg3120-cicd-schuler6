@@ -85,13 +85,24 @@
  your-public-ip should be the public IP from the instance.  
  IMPORTANT:  Make sure your inbound rules allow connections to port 4200!!!  
 
-# DockerHub
+# DockerHub  
 
-- Process to create public repo in DockerHub
-- How to authenticate with DockerHub via CLI using Dockerhub credentials
-  - what credentials would you recommend providing?
-- How to push container to Dockerhub
-
+  **Create Public Repo on DockerHub**  
+  -Go to hub.docker.com  
+  -Log in and click on "Create Repository"  
+  -Choose a name, set visibility to public, and create.  
+  
+  **How to authenticate with DockerHub via CLI using Dockerhub credentials**  
+    -Create a personal access token  
+    -Go to DockerHub Security Settings  
+    -Create a new token with read/write scope  
+    -Authenticate with Dockerhub by `docker login`  
+    -The password is your personal access token that you created
+    
+  **To push an image to DockerHub**  
+    -tag the image `docker tag schuler6-3120 schuler6/schuler6-3120`  
+    -push the image `docker push schuler6/schuler6-3120`
+  
 # GitHub Actions
 
 - Configuring GitHub Secrets
