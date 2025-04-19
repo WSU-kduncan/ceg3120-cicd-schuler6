@@ -23,9 +23,24 @@
    **Make sure WSL2 is installed**  
    `wsl --install`  and restart the system.  
    
-- how to build the container
-- how to run the container
-- how to view the project running in the container (open a browser...go to ip and port...)
+ **How to build the container**  
+ First, make sure you have the github repository with the angular project cloned.  
+ Go to the project's directory `cd ceg3120-cicd-schuler6`  
+ Make sure your Dockerfile is included in the repo (mine is in the root of the repo)  
+ Then run `docker build -t schuler6-3120 .`
+ That creates the Docker image `schuler6-3120`  
+ If the build hangs, you probably need to upgrade the instance to more cpu's, more ram, and more memory and repeat the previous steps
+ (I used ubuntu t2.medium with 2 cpus, 4 gb ram, and 30 gb of memory)
+ 
+ **How to run the container**  
+ To run the container type `docker run -p 4200:4200 schuler6-3120`
+ The -p 4200:4200 maps port 4200 in the container to port 4200 on the host.
+ 
+ 
+ **How to view the project running in the container**   
+ Open a browser and goto http://<your-public-ip>:4200  
+ your-public-ip should be the public IP from the instance.  
+ IMPORTANT:  Make sure your inbound rules allow connections to port 4200!!!  
 
 # DockerHub
 
