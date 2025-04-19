@@ -11,12 +11,14 @@ GitHub: Hosts the source code and triggers workflows on code changes.
 
 GitHub Actions: Automates building and pushing Docker images.  
 
-ChatGPT was used to generate the Dockerfile, and the github/workflow file.  
+ChatGPT was used to generate the Dockerfile, diagram, and the github/workflow file.  
 Prompt for Dockerfile: "Write a Dockerfile that builds and serves an Angular application using Node.js and Angular CLI."  
 Prompt for the github/workflow file:  "Set up a GitHub Actions workflow that builds and pushes a Docker image to DockerHub when a commit is pushed to the main branch using secrets for authentication."  
 
-- Part 4 - Diagramming goes here
-  - Include a diagram (or diagrams) of your entire workflow. Meaning it should start with a project change / update, the steps that happen in between, and end with the updated version when the server is queried (web page is accessed)
+Shortcomings:  I wasnt able to do the deployment section.  
+
+- Part 4 - Diagramming
+  [Diagram]()
 
 # Run Project Locally
 
@@ -158,12 +160,3 @@ Prompt for the github/workflow file:  "Set up a GitHub Actions workflow that bui
   [Workflow Link](https://github.com/WSU-kduncan/ceg3120-cicd-schuler6/blob/main/.github/workflows/docker-build-push.yml)
 
 
-# Deployment
-
-- Description of container restart script
-- Setting up a webhook on the server
-  - How you created you own listener
-  - How you installed the [webhook on GitHub](https://github.com/adnanh/webhook)
-  - How to keep the webhook running if the instance is on
-- Description of Webhook task definition file
-- Steps to set up a notifier in GitHub or DockerHub
