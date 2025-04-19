@@ -6,7 +6,20 @@
 
 # Run Project Locally
 
-- how you installed docker + dependencies (WSL2, for example)
+## 1. Installing Docker & Dependencies
+
+### For **Ubuntu (Linux)**:
+
+1. **Install Docker**:
+   Update your system and install Docker:
+   `sudo apt-get update`
+   `sudo apt-get upgrade -y`
+   `sudo apt-get install -y docker.io`
+
+   **Start and enable Docker**
+   `sudo systemctl enable docker`
+   `sudo systemctl start docker`
+   
 - how to build the container
 - how to run the container
 - how to view the project running in the container (open a browser...go to ip and port...)
