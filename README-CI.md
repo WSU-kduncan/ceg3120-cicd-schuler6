@@ -18,7 +18,7 @@ Prompt for the github/workflow file:  "Set up a GitHub Actions workflow that bui
 Shortcomings:  I wasnt able to do the deployment section.  
 
 - Part 4 - Diagramming
-  [Diagram]()
+  [Diagram](workflow.png)
 
 # Run Project Locally
 
