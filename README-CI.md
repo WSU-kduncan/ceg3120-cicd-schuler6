@@ -10,7 +10,7 @@
 
 ### For **Ubuntu (Linux)**:
 
-1. **Install Docker**:  
+   **Install Docker**:  
    Update your system and install Docker:  
    `sudo apt-get update`  
    `sudo apt-get upgrade -y`  
