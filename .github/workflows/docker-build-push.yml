@@ -16,7 +16,7 @@ jobs:
       - name: Log in to DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.schuler6 }}
+          username: ${{ secrets.DOCER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: your_dockerhub_username/schuler6-3120:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/schuler6-3120:latest
