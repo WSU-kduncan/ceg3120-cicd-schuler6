@@ -1,9 +1,11 @@
-### Project 5  
+# Project 5 
 
 ## Documentation  
 
-# Part 1 - Semantic Versioning
+### Part 1 - Semantic Versioning  
 
+* Generating tags *
+  
 
 
 
@@ -22,7 +24,6 @@ Stops the old container.
 Starts a fresh container with the updated version.  
 Website is updated automatically, no manual steps needed!  
 
-**Part 1 - Semantic Versioning**  
 
 **Demonstration Notes**  
 To view current state of site  
