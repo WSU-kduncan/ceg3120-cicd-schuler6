@@ -16,16 +16,16 @@ This builds a Docker image of the app
 This also pushes 4 semantic version tags to Dockerhub  (e.g. latest, vMAJOR, vMINOR, and vPATCH)  
 
 ### Workflow Steps  
-Checkout the code with Github Actions to pull the latest state of the repository  
-Set up Docker with DockerHub credentials using Github Secrets  
-Extract version metadata from the Git tag  
-Build Docker image and tag it as:  
+1. Checkout the code with Github Actions to pull the latest state of the repository  
+2. Set up Docker with DockerHub credentials using Github Secrets  
+3. Extract version metadata from the Git tag  
+4. Build Docker image and tag it as:  
   -latest (the newest image)  
   -vMAJOR  (v1)  
   -vMAJOR.MINOR  (v1.0)
   -vMAJOR.MINOR.PATCH  (v1.0.0)
-Push all tags to DockerHub  
-Send webhook to your production server to refresh the running container.  
+5. Push all tags to DockerHub  
+6. Send webhook to your production server to refresh the running container.  
 
 
 
