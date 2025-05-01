@@ -1,32 +1,19 @@
 **Project 5**  
 
 **Project Summary**  
-
 You change your code on your laptop.  
-
 You push that change to GitHub.  
-
 GitHub runs a workflow (GitHub Actions) that:  
-
 Builds a new Docker image for your project.  
-
 Tags it with a version and latest.  
-
 Pushes it to DockerHub.  
-
 GitHub sends a webhook to your server (an EC2 instance).  
-
 Your server is always listening with a webhook service.  
-
 When it receives the webhook, it:  
-
 Pulls the new Docker image.  
-
 Stops the old container.  
-
 Starts a fresh container with the updated version.  
-
-Your website is updated automatically — no manual steps needed!  
+Website is updated automatically, no manual steps needed!  
 
 **Part 1 - Semantic Versioning**  
 
