@@ -1,0 +1,12 @@
+[Unit]
+Description=GitHub Webhook Listener
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/webhook -hooks /home/ubuntu/ceg3120-cicd-schuler6/deployment/deploy-hook.json -verbose -port 9001
+WorkingDirectory=/home/ubuntu/ceg3120-cicd-schuler6
+Restart=always
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
