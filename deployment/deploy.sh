@@ -1,8 +1,8 @@
 #! /bin/bash
 
 # kill the old container process - stopped & then removed
-docker stop birdapp
-docker remove birdapp
+docker stop birdapp || true
+docker rm || true
 # pull fresh image
 docker pull schuler6/schuler6-3120:latest
 # run new container by name, with restart automatic
