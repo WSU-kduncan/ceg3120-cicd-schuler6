@@ -4,7 +4,7 @@
 
 **Demonstration Notes**  
 To view current state of site  
-http://http://44.206.46.241:4200  
+http://44.206.46.241:4200  
 
 Check Docker Status  
 docker ps  
