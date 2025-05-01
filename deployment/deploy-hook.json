@@ -1,0 +1,19 @@
+[
+  {
+    "id": "deploy-container",
+    "execute-command": "/home/ubuntu/ceg3120-cicd-schuler6/deployment/deploy.sh",
+    "command-working-directory": "/home/ubuntu/ceg3120-cicd-schuler6",
+    "pass-environment-to-command": [],
+    "response-message": "Deployment triggered successfully.",
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hash-sha1",
+        "secret": "cb485674e5ebb48c1625b4e3b5a16907fa8b87b8",
+        "parameter": {
+          "source": "header",
+          "name": "X-Hub-Signature"
+        }
+      }
+    }
+  }
+]
