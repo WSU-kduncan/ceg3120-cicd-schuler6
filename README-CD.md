@@ -4,8 +4,29 @@
 
 ### Part 1 - Semantic Versioning  
 
-### Tags in Github
-To see tags run git tag
+### Tags in Github  
+To see tags in a git repository run `git tag`  
+To generate a version controlled tag run `git tag -a v1.0.0 -m "Release version 1.0.0"` (replace with current verion)  
+Use semantic versioning format which is `v<MAJOR>.<MINOR>.<PATCH>`  
+To push a tag to Github run `git push origin v1.0.0`  
+
+### Workflow Summary  
+Workflow is triggered on a `push` of the tag  
+This builds a Docker image of the app     
+This also pushes 4 semantic version tags to Dockerhub  (e.g. latest, vMAJOR, vMINOR, and vPATCH)  
+
+### Workflow Steps  
+Checkout the code with Github Actions to pull the latest state of the repository  
+Set up Docker with DockerHub credentials using Github Secrets  
+Extract version metadata from the Git tag  
+Build Docker image and tag it as:  
+  -latest (the newest image)  
+  -vMAJOR  (v1)  
+  -vMAJOR.MINOR  (v1.0)
+  -vMAJOR.MINOR.PATCH  (v1.0.0)
+Push all tags to DockerHub  
+Send webhook to your production server to refresh the running container.  
+
 
 
 
