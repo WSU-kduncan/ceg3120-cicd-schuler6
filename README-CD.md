@@ -31,7 +31,7 @@ webhook logs that validate container refresh has been triggered
 sudo journalctl -u webhook.service -n 50  
 
 Check site again  
-http://http://44.206.46.241:4200  
+http://44.206.46.241:4200  
 
 Check docker status  
 docker ps
