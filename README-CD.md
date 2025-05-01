@@ -4,8 +4,8 @@
 
 ### Part 1 - Semantic Versioning  
 
-* Generating tags *
-  
+### Tags in Github
+To see tags run git tag
 
 
 
