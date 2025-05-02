@@ -6,13 +6,13 @@
 The goal of this Continuous Deployment (CD) project is to automate the process of building, tagging, publishing, and deploying a Docker Angular application to an EC2 instance. Whenever a semantic version tag is pushed to GitHub, the system automatically builds a new image, uploads it to DockerHub, and redeploys the updated container on an EC2 instance.  
 
 ## Tools & Their Roles  
-*GitHub Actions* – for CI/CD automation
-*Docker* – for containerizing the Angular app
-*DockerHub* – for hosting the Docker images
-*Amazon EC2* – for running the production environment
-*adnanh/webhook* – lightweight webhook listener on EC2
-*systemd* – for managing the webhook as a persistent service
-*Angular* – as the frontend framework being deployed
+*GitHub Actions* – for CI/CD automation  
+*Docker* – for containerizing the Angular app  
+*DockerHub* – for hosting the Docker images  
+*Amazon EC2* – for running the production environment  
+*adnanh/webhook* – lightweight webhook listener on EC2  
+*systemd* – for managing the webhook as a persistent service  
+*Angular* – as the frontend framework being deployed  
 
 ## Resources  
 [semantic versioning](https://semver.org/)  
