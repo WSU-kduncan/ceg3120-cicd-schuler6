@@ -14,7 +14,7 @@ The goal of this Continuous Deployment (CD) project is to automate the process o
 *systemd* - Ensures webhook runs as a background service on EC2  
 
 ## Resources  
-
+[semantic versioning](https://semver.org/)
 ChatGPT was used to try to fix the race condition I was getting with my bash script.   
   Prompt - "How do I prevent a race condition when stopping and removing a running Docker container and replacing it with a new one in a bash deployment script?"  
 
