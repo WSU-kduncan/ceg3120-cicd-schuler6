@@ -130,8 +130,14 @@ It specifies:
 
 This configuration allows the EC2 server to automatically update and redeploy the Docker container when a new tag is pushed to the GitHub repository  
 
+### How to check the Definition File was loaded by the Webhook  
+run `sudo journalctl -u webhook -b` and you should see the hook file was parsed and hooks were loaded  
 
-[Webhook]()
+### To check if a Webhook is recieving Payloads  
+run `sudo journalctl -u webhook -f`  
+- If the webhook is running correctly you should see a log saying there's a matched hook and executing of the deploy.sh  
+- you can moniter the logs in real time using `sudo journalctl -u webhook -f`  
+[Definition File](deployment/deploy-hook.json)  
 
 **Project Summary**  
 You change your code on your laptop.  
