@@ -21,12 +21,17 @@ This also pushes 4 semantic version tags to Dockerhub  (e.g. latest, vMAJOR, vMI
 3. Extract version metadata from the Git tag  
 4. Build Docker image and tag it as:  
   -latest (the newest image)  
-  -vMAJOR  (v1)  
-  -vMAJOR.MINOR  (v1.0)
-  -vMAJOR.MINOR.PATCH  (v1.0.0)
+  -vMAJOR  (v1)   
+  -vMAJOR.MINOR  (v1.0)  
+  -vMAJOR.MINOR.PATCH  (v1.0.0)  
 5. Push all tags to DockerHub  
 6. Send webhook to your production server to refresh the running container.  
 
+### If reusing this workflow on another repository you must update:  
+* `DOCKER_USERNAME` - add or update the secret with your Dockerhub username  
+* `DOCKER_TOKEN` - add or update the secret with a new Dockerhub access token  
+* Update any references to the image name in the workflow (In particular the docker build and tag steps)  
+* Update the Webhook URL in the final step of the workflow to the new server IP and port
 
 
 
