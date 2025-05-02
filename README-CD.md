@@ -6,18 +6,22 @@
 The goal of this Continuous Deployment (CD) project is to automate the process of building, tagging, publishing, and deploying a Docker Angular application to an EC2 instance. Whenever a semantic version tag is pushed to GitHub, the system automatically builds a new image, uploads it to DockerHub, and redeploys the updated container on an EC2 instance.  
 
 ## Tools & Their Roles  
-*GitHub Actions* - Automates CI/CD pipeline and triggers workflows on version tags  
-*Docker* - Containerizes the Angular app for portability and deployment  
-*DockerHub* - Hosts and distributes container images  
-*EC2 (AWS)* - Hosts production server for running the deployed container  
-*webhook (adnanh)* - Listens for GitHub payloads and triggers container refresh  
-*systemd* - Ensures webhook runs as a background service on EC2  
+*GitHub Actions* – for CI/CD automation
+*Docker* – for containerizing the Angular app
+*DockerHub* – for hosting the Docker images
+*Amazon EC2* – for running the production environment
+*adnanh/webhook* – lightweight webhook listener on EC2
+*systemd* – for managing the webhook as a persistent service
+*Angular* – as the frontend framework being deployed
 
 ## Resources  
-[semantic versioning](https://semver.org/)
+[semantic versioning](https://semver.org/)  
 ChatGPT was used to try to fix the race condition I was getting with my bash script.   
   Prompt - "How do I prevent a race condition when stopping and removing a running Docker container and replacing it with a new one in a bash deployment script?"  
-
+ChatGPT used to generate the deploy-hook.json 
+  Prompt - "Create a webhook definition file for adnanh's webhook that triggers a deploy.sh script when it receives a valid GitHub payload, using validation with a secret"  
+ChatGPT used to learn how to monitor logs from a systemd service
+  Prompt - "How do I monitor logs from a systemd service?"
 
 ## Known issues  
 When doing the demonstration, the deploy.sh script did not update the name of the tab in the browser like it should have. When manually running the script, the tab name was changed correctly. To fix this issue, the script needs to add an "image remove" before pulling.
