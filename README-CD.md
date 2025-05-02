@@ -25,7 +25,7 @@ ChatGPT used to learn how to monitor logs from a systemd service
   Prompt - "How do I monitor logs from a systemd service?"
 
 ## Known issues  
-When doing the demonstration, the deploy.sh script did not update the name of the tab in the browser like it should have. When manually running the script, the tab name was changed correctly. To fix this issue, the script needs to add an "image remove" before pulling.
+When doing the demonstration, the `deploy.sh` script did not update the browser tab title as expected. When manually running the script, the title updated correctly. To fix this issue, the script needs to explicitly remove the existing Docker image before pulling the latest version.
 
 ## Documentation  
 
