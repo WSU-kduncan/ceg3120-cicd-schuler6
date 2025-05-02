@@ -35,6 +35,20 @@ This also pushes 4 semantic version tags to Dockerhub  (e.g. latest, vMAJOR, vMI
 
 [Workflow Link](.github/workflows/docker-build-push.yml)  
 
+### Testing and Validating the Workflow  
+1. Push a tag to trigger the workflow  
+2. Check the Github actions tab in the repository  
+     - Look for a green checkmark (this means it worked)  
+     - Look at logs showing the Docer image was built and pushed  
+3. Check Dockerhub repository to see if the tags are received (should see the 4 versioned tags)  
+4. Run `sudo journalctl -u webhook` to check if the deploy script was triggered
+
+### Verify the Image works in Dockerhub  
+1. Pull the tagged image from Dockerhub with `docker pull schuler6/schuler-3120:latest`  
+2. Run the Docker container `docker run -d -p 4200:4200 --name birdapp schuler6/schuler6-3120:latest`
+3. Test the app in the browser by going to `http://44.206.46.241:4200`
+4. Verify the site works (and the possible changes were applied)
+
 
 **Project Summary**  
 You change your code on your laptop.  
