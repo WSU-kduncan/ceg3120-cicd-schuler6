@@ -44,11 +44,79 @@ This also pushes 4 semantic version tags to Dockerhub  (e.g. latest, vMAJOR, vMI
 4. Run `sudo journalctl -u webhook` to check if the deploy script was triggered
 
 ### Verify the Image works in Dockerhub  
-1. Pull the tagged image from Dockerhub with `docker pull schuler6/schuler-3120:latest`  
-2. Run the Docker container `docker run -d -p 4200:4200 --name birdapp schuler6/schuler6-3120:latest`
-3. Test the app in the browser by going to `http://44.206.46.241:4200`
-4. Verify the site works (and the possible changes were applied)
+1. Pull the tagged image from Dockerhub with `docker pull schuler6/schuler-3120:latest`   
+2. Run the Docker container `docker run -d -p 4200:4200 --name birdapp schuler6/schuler6-3120:latest`  
+3. Test the app in the browser by going to `http://44.206.46.241:4200`  
+4. Verify the site works (and the possible changes were applied)  
 
+## Part 2 - Deployment  
+
+### EC2 Configuration Details  
+* AMI ID and Name  
+  - `ami-084568db4383264d4`  
+  - `ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20250305`  
+
+* Instance Type - `t2.medium`  
+* Specs  
+  - 2 CPU cores  
+  - 4 GB ram   
+  - 30 GB storage volume  
+* Security Group info  
+  Inbound rules allow ports:  
+  - 22 for ssh access  
+  - 80 for http serving web app  
+  - 443 for https connections (didn't really use this so could be removed)  
+  - 4200 for local angular development  
+  - 9000 for webhook connections  
+  - 9001 for the webhook listener
+
+### How to install docker on Ubuntu EC2 instance  
+`sudo apt update`  
+`sudo apt install -y docker.io`  
+`sudo systemctl enable docker`  
+`sudo systemctl start docker`  
+
+Confirm download by running `docker --version`  
+Test by running `docker run hello-world`  
+- if it can run that successfully, then you can run containers
+
+### Testing Docker on the EC2 instance   
+Pull the latest image by `docker pull schuler6/schuler6-3120:latest`  
+Run the container `docker run -d -p 4200:4200 --name birdapp schuler6/schuler6-3120:latest`  
+or `docker run -it -p 4200:4200 --name birdapp schuler6/schuler6-3120:latest`  
+* `-d` flag runs the container detached and in the bacground (for running in production after testing)  
+* `-it` flag allows interaction with the container (helpful for debugging or testing)  
+
+### How to verify the container is serving the application  
+* From the Container Side  
+  - `docker ps` this shows the container running  
+* From the Host Side (EC2)  
+  - `curl http://localhost:4200`  
+* From External Connection  
+  - Open a browser and go to `http://44.206.46.241:4200`  
+
+### How to Manually Refresh a Container with a New Image  
+1. Stop and remove the current container  
+   - `docker stop birdapp`  
+   - `docker rm birdapp`  
+2. Pull the latest image  
+   - `docker pull schuler6/schuler6-3120:latest`  
+3. Run the new container  
+   - `docker run -d -p 4200:4200 --name birdapp schuler6/schuler6-3120:latest`
+
+### Bash Script for Container Application Refresh  
+[Bash Script](deployment/deploy.sh)  
+
+How to test the bash script  
+- You can manually test the bash script by running `./deployment/deploy.sh`  
+- Check log messages to confirme each step  
+- Verify the container is running with `docker ps`
+
+### Setup Webhook listener on EC2 Instance  
+run:  
+`sudo apt update`  
+`sudo apt install webhook -y`   
+  - To verify install run `webhook --version` and you should see a version number  
 
 **Project Summary**  
 You change your code on your laptop.  
