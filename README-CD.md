@@ -6,12 +6,12 @@
 The goal of this Continuous Deployment (CD) project is to automate the process of building, tagging, publishing, and deploying a Docker Angular application to an EC2 instance. Whenever a semantic version tag is pushed to GitHub, the system automatically builds a new image, uploads it to DockerHub, and redeploys the updated container on an EC2 instance.
 
 ## Tools & Their Roles
-**GitHub Actions**  Automate CI/CD pipeline and trigger workflows on version tags
-**Docker**   Containerize the Angular app for portability and deployment
-**DockerHub**  Host and distribute container images
-**EC2 (AWS)**  Host production server for running the deployed container
-**webhook (adnanh)**  Listens for GitHub payloads and triggers container refresh
-**systemd** - Ensures webhook runs as a background service on EC2
+GitHub Actions - Automates CI/CD pipeline and triggers workflows on version tags
+Docker - Containerizes the Angular app for portability and deployment
+DockerHub - Hosts and distributes container images
+EC2 (AWS) - Hosts production server for running the deployed container
+webhook (adnanh) - Listens for GitHub payloads and triggers container refresh
+systemd - Ensures webhook runs as a background service on EC2
 
 ## Documentation  
 
@@ -176,11 +176,11 @@ Summary:
 * Auto-restarts on failure
 * Runs as ubuntu user
 
-# To Enable and Start the Webhook Service  
+### To Enable and Start the Webhook Service  
 run `sudo systemctl enable webhook`  
 `sudo systemctl start webhook`  
 
-# To confirm the Webhook Service is running  
+### To confirm the Webhook Service is running  
 `sudo systemctl status webhook`  
 Push a tag to test and see if the deploy.sh script runs  
 [Webhook Service](deployment/webhook.service)
