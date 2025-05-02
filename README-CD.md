@@ -13,6 +13,15 @@ The goal of this Continuous Deployment (CD) project is to automate the process o
 *webhook (adnanh)* - Listens for GitHub payloads and triggers container refresh  
 *systemd* - Ensures webhook runs as a background service on EC2  
 
+## Resources  
+
+ChatGPT was used to try to fix the race condition I was getting with my bash script.   
+  Prompt - "How do I prevent a race condition when stopping and removing a running Docker container and replacing it with a new one in a bash deployment script?"  
+
+
+## Known issues  
+When doing the demonstration, the deploy.sh script did not update the name of the tab in the browser like it should have. When manually running the script, the tab name was changed correctly. To fix this issue, the script needs to add an "image remove" before pulling.
+
 ## Documentation  
 
 ### Part 1 - Semantic Versioning  
@@ -185,8 +194,8 @@ run `sudo systemctl enable webhook`
 Push a tag to test and see if the deploy.sh script runs  
 [Webhook Service](deployment/webhook.service)
 
-**Project Summary**  
-You change your code on your laptop.  
+**Project Summary in a Nutshell**  
+You change your code.  
 You push that change to GitHub.  
 GitHub runs a workflow (GitHub Actions) that:  
 Builds a new Docker image for your project.  
