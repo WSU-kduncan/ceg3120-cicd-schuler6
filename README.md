@@ -8,5 +8,7 @@ This repository contains:
 ## Documentation Links  
 
 [README-CI Link](README-CI.md)  
+Describes the Continuous Integration (CI) process using GitHub Actions, including code checking, building, and testing the Angular application.
 
 [README-CD Link](README-CD.md)  
+Details the Continuous Deployment (CD) process using GitHub Actions, DockerHub, and an EC2 server. Includes instructions for setting up webhooks, tagging releases, and automating deployments.
