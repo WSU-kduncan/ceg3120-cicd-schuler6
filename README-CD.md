@@ -31,9 +31,10 @@ This also pushes 4 semantic version tags to Dockerhub  (e.g. latest, vMAJOR, vMI
 * `DOCKER_USERNAME` - add or update the secret with your Dockerhub username  
 * `DOCKER_TOKEN` - add or update the secret with a new Dockerhub access token  
 * Update any references to the image name in the workflow (In particular the docker build and tag steps)  
-* Update the Webhook URL in the final step of the workflow to the new server IP and port
+* Update the Webhook URL in the final step of the workflow to the new server IP and port  
 
-[Workflow Link](.github/workflows/docker-build-push.yml)
+[Workflow Link](.github/workflows/docker-build-push.yml)  
+
 
 **Project Summary**  
 You change your code on your laptop.  
