@@ -1,17 +1,17 @@
 # Project 5 
 
-# Continuous Deployment Project Overview
+# Continuous Deployment Project Overview  
 
 ##  Project Goal
-The goal of this Continuous Deployment (CD) project is to automate the process of building, tagging, publishing, and deploying a Docker Angular application to an EC2 instance. Whenever a semantic version tag is pushed to GitHub, the system automatically builds a new image, uploads it to DockerHub, and redeploys the updated container on an EC2 instance.
+The goal of this Continuous Deployment (CD) project is to automate the process of building, tagging, publishing, and deploying a Docker Angular application to an EC2 instance. Whenever a semantic version tag is pushed to GitHub, the system automatically builds a new image, uploads it to DockerHub, and redeploys the updated container on an EC2 instance.  
 
-## Tools & Their Roles
-GitHub Actions - Automates CI/CD pipeline and triggers workflows on version tags
-Docker - Containerizes the Angular app for portability and deployment
-DockerHub - Hosts and distributes container images
-EC2 (AWS) - Hosts production server for running the deployed container
-webhook (adnanh) - Listens for GitHub payloads and triggers container refresh
-systemd - Ensures webhook runs as a background service on EC2
+## Tools & Their Roles  
+GitHub Actions - Automates CI/CD pipeline and triggers workflows on version tags  
+Docker - Containerizes the Angular app for portability and deployment  
+DockerHub - Hosts and distributes container images  
+EC2 (AWS) - Hosts production server for running the deployed container  
+webhook (adnanh) - Listens for GitHub payloads and triggers container refresh  
+systemd - Ensures webhook runs as a background service on EC2  
 
 ## Documentation  
 
