@@ -116,7 +116,22 @@ How to test the bash script
 run:  
 `sudo apt update`  
 `sudo apt install webhook -y`   
-  - To verify install run `webhook --version` and you should see a version number  
+  - To verify install run `webhook --version` and you should see a version number
+
+### Webhook Configuration Summary  
+
+### Summary of the Webhook Definition File  
+The deploy-hook.json file defines how the EC2 instance reacts when it receives a webhook from GitHub  
+It specifies:  
+* The command to execute (deploy.sh)  
+* The working directory  
+* A SHA1 signature validation using a GitHub secret to ensure the request is genuine  
+* A success message returned upon triggering  
+
+This configuration allows the EC2 server to automatically update and redeploy the Docker container when a new tag is pushed to the GitHub repository  
+
+
+[Webhook]()
 
 **Project Summary**  
 You change your code on your laptop.  
