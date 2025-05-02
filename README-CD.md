@@ -136,8 +136,41 @@ run `sudo journalctl -u webhook -b` and you should see the hook file was parsed 
 ### To check if a Webhook is recieving Payloads  
 run `sudo journalctl -u webhook -f`  
 - If the webhook is running correctly you should see a log saying there's a matched hook and executing of the deploy.sh  
-- you can moniter the logs in real time using `sudo journalctl -u webhook -f`  
+- Monitor the logs in real time using `sudo journalctl -u webhook -f`  
+- Run `docker ps` to see if the container is up, running the latest image, and times match the recent webhook trigger  
 [Definition File](deployment/deploy-hook.json)  
+
+### Configuring Github as the Payload Sender  
+Github was chosen as the payload sender because I am more familiar with it than Docker.  
+
+### Steps for Enabling GitHub to Send Payloads to the EC2 Webhook Listener  
+1. Go to the GitHub repository  
+2. Navigate to Settings --> Webhooks  
+3. Click "Add webhook":  
+4. Payload URL: http://44.206.46.241:9001/hooks/deploy-container  
+5. Content type: application/json  
+6. Secret: Match the secret in your deploy-hook.json  
+7. Select "Let me select individual events" and check Pushes  
+8. Save the webhook  
+
+A git tag push will trigger a payload to be sent  
+To verify a successful payload delivery, logs can be checked by running `sudo journalctl -u webhook -f`  
+
+### Webhook Service on EC2 Instance  
+Summary:  
+* Listens on port 9001
+* Uses the deploy-hook.json to determine trigger and script behavior
+* Auto-restarts on failure
+* Runs as ubuntu user
+
+# To Enable and Start the Webhook Service  
+run `sudo systemctl enable webhook`  
+`sudo systemctl start webhook`  
+
+# To confirm the Webhook Service is running  
+`sudo systemctl status webhook`  
+Push a tag to test and see if the deploy.sh script runs  
+[Webhook Service](deployment/webhook.service)
 
 **Project Summary**  
 You change your code on your laptop.  
